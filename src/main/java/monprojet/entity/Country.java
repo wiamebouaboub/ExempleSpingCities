@@ -1,4 +1,5 @@
 package monprojet.entity;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -26,7 +27,6 @@ public class Country {
     // @OneToMany
     // Lombok https://www.projectlombok.org/features/ToString
     @ToString.Exclude // On ne veut pas inclure la liste des villes dans le toString
-    // Sinon récursivité infinie
-    
-    private List<City> cities;
+    // Sinon récursivité infinie    
+    private List<City> cities = new ArrayList<>();
 }
