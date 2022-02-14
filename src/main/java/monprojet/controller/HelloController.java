@@ -1,5 +1,4 @@
 package monprojet.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping(path = "/hello") // This means URL's start with /hello (after Application path)
 @Slf4j
 public class HelloController {
+
 	
 	// On affichera par défaut la page 'hello.html'
 	private static final String DEFAULT_VIEW = "hello";
@@ -25,6 +25,13 @@ public class HelloController {
 		model.addAttribute("message", "World");
 		return DEFAULT_VIEW;
 	}
+
+	/*@GetMapping(path = "villes")
+	public String afficheLesVilles(Model model) {
+		List<City> cities=dao.findAll();		
+		model.addAttribute("cities", cities);
+		return DEFAULT_VIEW;
+	}*/
 
 	@GetMapping(path = "requestParam")
 	// cf. https://www.baeldung.com/spring-request-param
